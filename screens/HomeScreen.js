@@ -22,17 +22,22 @@ export default function HomeScreen() {
             }}
         />
         <GooglePlacesAutocomplete
-          styles={{ container: {flex: 0}, textInput: { fontSize: 18}}}
+          styles={{ container: { flex: 0 }, textInput: { fontSize: 18 }}}
           placeholder='Where from?'
           nearbyPlacesAPI='GooglePlacesSearch'
           debounce={400}
+          fetchDetails={true}
           enablePoweredByContainer={false}
           returnKeyType={'search'}
           minLength={2}
           onPress={(data, details = null) => {
+            //console.log('esto es la data', data, 'esto es details', details)
             dispatch(setOrigin({
-              location: details.geometry.location
+              location: details.geometry.location,
+              description: data.description
             }))
+
+            dispatch(setDestination(null))
           } }
           query={{
             key: GOOGLE_MAPS_APIKEY,
