@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import {View, StyleSheet, Text} from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
 import MapViewDirections from 'react-native-maps-directions';
@@ -11,9 +11,20 @@ const Map = () => {
 
     const origin = useSelector(selectOrigin)
     const destination = useSelector(selectDestination)
+    const mapRef = useRef(null)
+
+    useEffect(()=> {
+        if(!origin || !destination) return;
+        
+        //zoom
+        mapRef.current.fitToSuppliedMarkers(["origin", "destination"], {
+            edgePadding: { top: 40, right: 40, bottom: 40, left: 40 }
+        })
+    }, [origin, destination])
 
     return (
         <MapView
+            ref={mapRef}
             style={tw`flex-1`}
             mapType='mutedStandard' //quit unnecesary info
             initialRegion={{
@@ -42,6 +53,17 @@ const Map = () => {
                     title={'Origin'}
                     description={origin.description}
                     identifier='origin'
+                />
+            )}
+            {destination?.location && (
+                <Marker
+                    coordinate={{
+                        latitude: destination.location.lat,
+                        longitude: destination.location.lng
+                    }}
+                    title={'Destination'}
+                    description={destination.description}
+                    identifier='destination'
                 />
             )}
         </MapView>
