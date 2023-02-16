@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, StyleSheet, FlatList} from 'react-native';
+import {View, StyleSheet, FlatList, Text} from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { Icon } from 'react-native-elements';
 import tw from 'tailwind-react-native-classnames';
@@ -9,7 +9,7 @@ const data = [
         id: '123',
         icon: 'home',
         location: 'Home',
-        destination: 'Corrientes 2200, Rosario'
+        destination: 'FYF, Corrientes 2200, Rosario, Santa Fe Province, Argentina'
     },
     {
         id: '456',
