@@ -11,7 +11,7 @@ export default function HomeScreen() {
 
   const dispatch = useDispatch()
   
-
+  console.log('cha')
   return (
     <SafeAreaView style={tw`bg-white h-full`}>
       <View style={tw`p-5`}>
@@ -30,7 +30,9 @@ export default function HomeScreen() {
           returnKeyType={'search'}
           minLength={2}
           onPress={(data, details = null) => {
-
+            dispatch(setOrigin({
+              location: details.geometry.location
+            }))
           } }
           query={{
             key: GOOGLE_MAPS_APIKEY,
