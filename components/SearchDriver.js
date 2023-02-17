@@ -12,16 +12,16 @@ const SearchDriver = () => {
 
     useEffect(()=> {
         setTimeout(()=> {
-            setLoadingMessage('Assigning a Driver...')
+            setLoadingMessage('Assigning a Driver')
         }, 8000)
         setTimeout(()=> {
-            setLoadingMessage('Looking for a Driver nearby...')
+            setLoadingMessage('Looking for a Driver nearby')
         }, 6000)
         setTimeout(()=> {
-            setLoadingMessage('Looking for the one that fits your needs...')
+            setLoadingMessage('Looking for the one that fits your needs')
         }, 4000)
         setTimeout(()=> {
-            setLoadingMessage('Looking for available Drivers...')
+            setLoadingMessage('Looking for available Drivers')
         }, 2000)
         setTimeout(()=> {
             setLoading(false)
@@ -37,11 +37,11 @@ const SearchDriver = () => {
             {   
             loading ?
             <View>
-                <Text style={tw`text-center py-4 text-xl font-semibold  border-b border-gray-200`}>
+                <Text style={tw`text-center py-4 text-xl font-semibold border-b border-gray-200`}>
                     We are looking for a Driver
                 </Text>
-                <ActivityIndicator size={'large'} color='black'/>
-                <Text style={tw`text-center text-xl`}>{loadingMessage}</Text>
+                <ActivityIndicator style={tw`pt-16`} size={'large'} color='black'/>
+                <Text style={tw`text-center text-xl pt-8`}>{loadingMessage}</Text>
             </View> : 
             <View>
                 <Text style={tw`text-center py-4 text-xl font-semibold border-b border-gray-200`}>

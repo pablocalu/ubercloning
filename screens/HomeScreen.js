@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, StyleSheet, SafeAreaView, Image } from 'react-native'
+import { View, StyleSheet, SafeAreaView, Image, Text } from 'react-native'
 import tw from 'tailwind-react-native-classnames'
 import NavOptions from '../components/NavOptions'
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete'
@@ -45,6 +45,9 @@ export default function HomeScreen() {
           }}
         />
         <NavOptions />
+        <Text style={tw`text-center py-0 text-xl font-semibold border-b border-gray-200`}>
+          Recent places
+        </Text>
         <NavFavourites/>
       </View>
     </SafeAreaView>

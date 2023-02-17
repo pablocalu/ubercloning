@@ -37,7 +37,8 @@ const NavigateCard = () => {
                         nearbyPlacesAPI='GooglePlacesSearch'
                         query={{
                             key: GOOGLE_MAPS_APIKEY,
-                            language: 'en'
+                            language: 'en',
+                            components: 'country:ar'
                         }}
                     />
                 </View>

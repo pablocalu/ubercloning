@@ -15,9 +15,21 @@ const data = [
     },
     {
         id: '456',
+        icon: 'home',
+        location: 'Mom House',
+        destination: 'Pellegrini 3200, Rosario'
+    }, 
+    {
+        id: '45326',
+        icon: 'home',
+        location: 'Dad House',
+        destination: 'Paraguay 1220, Rosario'
+    }, 
+    {
+        id: '444356',
         icon: 'briefcase',
-        location: 'Pepito House',
-        destination: 'Pellegrini 3000, Rosario'
+        location: 'Work',
+        destination: 'Cochabamba 1500, Rosario'
     }, 
 ]
 
