@@ -47,7 +47,7 @@ const RideOptionsCard = () => {
                 >
                     <Icon name='chevron-left' type='fontawesome'/>
                 </TouchableOpacity>
-                <Text style={tw`text-center py-5 text-xl`}>
+                <Text style={tw`text-center py-5 text-xl font-semibold  border-b border-gray-200`}>
                     Select a Ride - {travelTimeInformation?.distance.text}
                 </Text>
             </View>

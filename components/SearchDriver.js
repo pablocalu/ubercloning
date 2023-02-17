@@ -37,18 +37,18 @@ const SearchDriver = () => {
             {   
             loading ?
             <View>
-                <Text style={tw`text-center py-5 text-xl`}>
+                <Text style={tw`text-center py-4 text-xl font-semibold  border-b border-gray-200`}>
                     We are looking for a Driver
                 </Text>
                 <ActivityIndicator size={'large'} color='black'/>
                 <Text style={tw`text-center text-xl`}>{loadingMessage}</Text>
             </View> : 
             <View>
-                <Text style={tw`text-center py-5 text-xl`}>
+                <Text style={tw`text-center py-4 text-xl font-semibold border-b border-gray-200`}>
                     Driver Assigned
                 </Text>
                 <View
-                        style={tw`flex-row items-center justify-between px-10`}
+                        style={tw`flex-row items-center justify-between px-10 pt-2`}
                     >
                         <Image
                             style={{
