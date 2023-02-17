@@ -16,7 +16,14 @@ const data = [
         icon: 'briefcase',
         location: 'Work',
         destination: 'Pellegrini 3000, Rosario'
-    }
+    },
+    {
+        id: '4df56',
+        icon: 'briefcase',
+        location: 'Work',
+        destination: 'Pellegrini 3100, Rosario'
+    },
+    
 ]
 
 const NavFavourites = () => {

@@ -17,7 +17,7 @@ export default function App() {
     <Provider store={store}>
       <NavigationContainer>
         <SafeAreaProvider>
-          <SafeAreaView style={SafeViewAndroid.AndroidSafeArea}>
+          <View style={SafeViewAndroid.AndroidSafeArea}>
           <Stack.Navigator>
             <Stack.Screen
               name='HomeScreen'
@@ -34,7 +34,7 @@ export default function App() {
               }}
             />
           </Stack.Navigator>
-          </SafeAreaView>
+          </View>
         </SafeAreaProvider>
       </NavigationContainer>
     </Provider>
