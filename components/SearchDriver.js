@@ -2,31 +2,50 @@ import React, { useEffect, useState } from 'react';
 import {View, StyleSheet, Text, SafeAreaView, ActivityIndicator, Image, TouchableOpacity} from 'react-native';
 import tw from 'tailwind-react-native-classnames';
 import { Icon } from 'react-native-elements';
+import { useNavigation } from '@react-navigation/native';
 
 const SearchDriver = () => {
 
+    const navigation = useNavigation()
     const [loading, setLoading] = useState(true)
+    const [loadingMessage, setLoadingMessage] = useState('')
 
     useEffect(()=> {
         setTimeout(()=> {
+            setLoadingMessage('Assigning a Driver...')
+        }, 8000)
+        setTimeout(()=> {
+            setLoadingMessage('Looking for a Driver nearby...')
+        }, 6000)
+        setTimeout(()=> {
+            setLoadingMessage('Looking for the one that fits your needs...')
+        }, 4000)
+        setTimeout(()=> {
+            setLoadingMessage('Looking for available Drivers...')
+        }, 2000)
+        setTimeout(()=> {
             setLoading(false)
-        }, 3000)
+        }, 10000)
     }, [loading])
 
+    
 
-    return (
+
+        return (
+
         <SafeAreaView style={tw`bg-white flex-1`}>
             {   
             loading ?
             <View>
                 <Text style={tw`text-center py-5 text-xl`}>
-                    Looking for a nearby Driver
+                    We are looking for a Driver
                 </Text>
                 <ActivityIndicator size={'large'} color='black'/>
+                <Text style={tw`text-center text-xl`}>{loadingMessage}</Text>
             </View> : 
             <View>
                 <Text style={tw`text-center py-5 text-xl`}>
-                    Driver Found
+                    Driver Assigned
                 </Text>
                 <View
                         style={tw`flex-row items-center justify-between px-10`}
@@ -43,9 +62,13 @@ const SearchDriver = () => {
                             <Text style={tw`text-xl font-semibold`}>
                                 Pablo Carro
                             </Text>
-                            <Text>
-                                4.8/5 Stars
-                            </Text>
+                            <View style={tw`flex-row`}>
+                            <Icon name='star' type='ionicon' size={14}/>
+                            <Icon name='star' type='ionicon' size={14}/>
+                            <Icon name='star' type='ionicon' size={14}/>
+                            <Icon name='star' type='ionicon' size={14}/>
+                            <Icon name='star-half' type='ionicon' size={14}/>
+                            </View>
                         </View>
                     </View>
                     <View
@@ -68,7 +91,7 @@ const SearchDriver = () => {
                             </Text>
                         </View>
                     </View>
-                    <View style={tw`flex-row bg-white justify-evenly py-2 mt-auto border-t border-gray-100`}>
+            <View style={tw`flex-row bg-white justify-evenly py-6 mt-auto border-t border-gray-100`}>
                 <TouchableOpacity style={tw`flex flex-row justify-between bg-black w-24 px-4 py-3 rounded-full`}
                 >
                     <Icon name='chatbubble-ellipses-outline' type='ionicon' color={'white'} size={16}/>
@@ -77,10 +100,12 @@ const SearchDriver = () => {
                     </Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={tw`flex flex-row justify-between w-24 px-4 py-3 rounded-full`}>
-                    <Icon name='call-outline' type='ionicon' color={'black'} size={16}/>
-                    <Text style={tw`text-center`}>
-                        Call
+                <TouchableOpacity style={tw`flex flex-row justify-between bg-black w-24 px-4 py-3 rounded-full`}
+                    onPress={()=> navigation.navigate('InfoCard')}
+                >
+                    <Icon name='information-circle-outline' type='ionicon' color={'white'} size={18}/>
+                    <Text style={tw`text-center text-white`}>
+                        Info
                     </Text>
                 </TouchableOpacity>
             </View>
