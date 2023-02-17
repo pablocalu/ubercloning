@@ -36,12 +36,12 @@ export default function HomeScreen() {
               location: details.geometry.location,
               description: data.description
             }))
-
             dispatch(setDestination(null))
           } }
           query={{
             key: GOOGLE_MAPS_APIKEY,
-            language: 'en'
+            language: 'en',
+            components: 'country:ar'
           }}
         />
         <NavOptions />

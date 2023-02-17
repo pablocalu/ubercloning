@@ -7,6 +7,7 @@ import NavigateCard from '../components/NavigateCard';
 import RideOptionsCard from '../components/RideOptionsCard';
 import { Icon } from 'react-native-elements/dist/icons/Icon';
 import { useNavigation } from '@react-navigation/native';
+import SearchDriver from '../components/SearchDriver';
 
 const MapScreen = () => {
 
@@ -40,6 +41,13 @@ const MapScreen = () => {
           <Stack.Screen
             name='RideOptionsCard'
             component={RideOptionsCard}
+            options={{
+              headerShown: false
+            }}
+          />
+          <Stack.Screen
+            name='SearchDriver'
+            component={SearchDriver}
             options={{
               headerShown: false
             }}

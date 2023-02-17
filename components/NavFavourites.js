@@ -3,6 +3,8 @@ import {View, StyleSheet, FlatList, Text} from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { Icon } from 'react-native-elements';
 import tw from 'tailwind-react-native-classnames';
+import { setDestination, setOrigin } from '../slices/navSlice';
+import { useDispatch } from 'react-redux';
 
 const data = [
     {
@@ -14,19 +16,15 @@ const data = [
     {
         id: '456',
         icon: 'briefcase',
-        location: 'Work',
+        location: 'Pepito House',
         destination: 'Pellegrini 3000, Rosario'
-    },
-    {
-        id: '4df56',
-        icon: 'briefcase',
-        location: 'Work',
-        destination: 'Pellegrini 3100, Rosario'
-    },
-    
+    }, 
 ]
 
 const NavFavourites = () => {
+
+    const dispatch = useDispatch()
+
     return (
         <FlatList
         data={data}
@@ -37,7 +35,15 @@ const NavFavourites = () => {
             />
         )}
         renderItem={({item: { location, destination, icon}}) => (
-            <TouchableOpacity style={tw`flex-row items-center p-5 `}>
+            <TouchableOpacity style={tw`flex-row items-center p-5 `}
+/*             onPress={() => {
+                //console.log('esto es la data', data, 'esto es details', details)
+                dispatch(setOrigin({
+                  location: data.location
+                }))
+                dispatch(setDestination(null))
+              } } */
+            >
                 <Icon
                     style={tw`mr-4 rounded-full bg-gray-300 p-3`}
                     name={icon}

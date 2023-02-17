@@ -17,7 +17,7 @@ const NavigateCard = () => {
 
     return (
         <SafeAreaView style={tw`bg-white flex-1`}>
-            <Text style={tw`text-center py-5 text-xl`}>Un titulo</Text>
+            <Text style={tw`text-center py-5 text-xl`}>Hi Pablo!</Text>
             <View style={tw`border-t border-gray-200 flex-shrink`}>
                 <View>
                     <GooglePlacesAutocomplete
@@ -56,7 +56,7 @@ const NavigateCard = () => {
                 <TouchableOpacity style={tw`flex flex-row justify-between w-24 px-4 py-3 rounded-full`}>
                     <Icon name='fast-food-outline' type='ionicon' color={'black'} size={16}/>
                     <Text style={tw`text-center`}>
-                        Rides
+                        Shipping
                     </Text>
                 </TouchableOpacity>
             </View>
