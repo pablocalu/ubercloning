@@ -54,7 +54,7 @@ const NavigateCard = () => {
                 </TouchableOpacity>
 
                 <TouchableOpacity style={tw`flex flex-row justify-between w-24 px-4 py-3 rounded-full`}>
-                    <Icon name='fast-food-outline' type='ionicon' color={'black'} size={16}/>
+                    <Icon name='cube-outline' type='ionicon' color={'black'} size={16}/>
                     <Text style={tw`text-center`}>
                         Shipping
                     </Text>
