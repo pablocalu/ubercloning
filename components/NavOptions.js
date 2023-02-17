@@ -9,15 +9,15 @@ import { selectOrigin } from '../slices/navSlice';
 const data = [
     {
         id: '123',
-        title: 'Get a ride',
-        image: 'https://links.papareact.com/3pn',
+        title: 'Get a Ride',
+        image: 'https://www.uber-assets.com/image/upload/f_auto,q_auto:eco,c_fill,w_485,h_385/f_auto,q_auto/products/carousel/UberX.png',
         screen: 'MapScreen'
     },
     {
         id: '456',
-        title: 'Order Food',
-        image: 'https://links.papareact.com/28w',
-        screen: 'EatsScreen'
+        title: 'Shipping',
+        image: 'https://blog.uber-cdn.com/wp-content/uploads/2020/04/Cardboard-Box_v02.png',
+        screen: 'ShippingScreen'
     }
 ]
 
