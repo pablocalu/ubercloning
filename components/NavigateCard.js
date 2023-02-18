@@ -14,7 +14,7 @@ const NavigateCard = () => {
 
     const dispatch = useDispatch()
     const navigation = useNavigation()
-
+    console.log('data')
     return (
         <SafeAreaView style={tw`bg-white flex-1`}>
             <Text style={tw`text-center py-4 text-xl font-semibold border-b border-gray-200`}>Hi Pablo!</Text>
