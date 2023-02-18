@@ -13,7 +13,7 @@ const SearchDriver = () => {
     useEffect(()=> {
         setTimeout(()=> {
             setLoadingMessage('Assigning a Driver')
-        }, 8000)
+        }, 9000)
         setTimeout(()=> {
             setLoadingMessage('Looking for a Driver nearby')
         }, 6000)
